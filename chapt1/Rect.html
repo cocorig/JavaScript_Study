@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates</title>
+    <style>
+        body{
+            background-color: black;
+            
+        }
+        div{
+            width: 250px;
+            height: 250px;
+            background-color: thistle;
+            margin-bottom: 4px;
+        }
+        .special{
+            background-color: brown;
+        }
+        aside{
+            position: fixed;
+            top:20px;
+            right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <aside>
+        <button class="by100px">Scroll by 100px(y)</button>
+        <button class="to100px">Scroll to 100px(y)</button>
+        <button class="intospacial">Scroll into special</button>
+    </aside>
+    <script>
+        const special = document.querySelector('.special');
+        special.addEventListener('click',(e)=>{//
+            const rect = special.getBoundingClientRect();
+            console.log(rect);
+            console.log(`client: ${e.clientX}, ${e.clientY}`);
+            console.log(`page: ${e.pageX}, ${e.pageY}`);
+        });
+        by100px = document.querySelector('.by100px');
+        to100px = document.querySelector('.to100px');
+        intospacial =document.querySelector('.intospacial');
+        
+        
+        by100px.addEventListener('click',()=>{
+            window.scrollBy({top:100,left:0, behavior:'smooth'});          //버튼을 누르면 100px씩 밑으로
+        });
+        to100px.addEventListener('click',()=>{
+            window.scrollTo(0,100);             //버튼을 누르면 100px인 곳으로 이동
+        });
+        intospacial.addEventListener('click',()=>{
+            special.scrollIntoView();//버튼을 누르면 special박스로 이동
+        });//element.scrollIntoView(): 특정 element를 기준으로 스크롤을 이동시킨다.
+
+        
+
+    </script>
+</body>
+</html>

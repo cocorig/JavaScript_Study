@@ -1,0 +1,104 @@
+body{
+    background-color: black;
+    text-align: center;
+}
+i{
+    font-size: 30px;
+}
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.game{
+display: flex;
+flex-direction: column;/*field가 남아있는공간에서 100%를 차지할수있도록*/
+background-image:url(./img/background.png);
+background-size : cover; /* 이미지 다 보이게 */
+width: 800px;
+height: 500px;
+border-radius: 20px;
+margin: auto;
+
+}
+.game__header{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.game__button{
+    width: 60px;
+    height: 60px;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    border: 4px solid black;
+    margin-bottom: 8px;
+    transition: transform 300ms ease-in;
+}
+.game__button:hover{
+    transform:  scale(1.1);
+}
+.game__timer{
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    border: 5px solid black;
+    margin-bottom: 8px;
+    visibility: hidden;
+}
+.game__score{
+    text-align: center;
+    background-color: burlywood;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid black;
+    font-size: 46px;
+    color: white;
+    visibility: hidden;
+    
+}
+.game__field{
+position: relative;/*범위안에 만들어짐*/
+width: 100%;
+height: 100%;/*부모의 100%*/
+margin-top: 40px;
+/* opacity: 0.4; */
+background-color: rgba(0,0,0,0); 
+}
+
+
+.pop-up{
+    display: block;/*보이게*/
+    width: 400px;
+    height: 140px;
+    padding: 20px;
+    margin: auto;/*중간으로 오기위해 대신 상위부모에 text-align: center줘야함 */
+    text-align: center;/*굳이 flex할 필요없이 span은 inline구조이니가 block을이용해 수직정렬*/
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.4);/*까만색(0,0,0) 20% 불투명도*/
+    transform: translateY(-150%);
+}
+.pop-up--hide{
+    display: none;
+}
+.pop-up__refresh{
+    width: 60px;
+    height: 60px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.pop-up__message{
+    display: block;
+    font-size: 40px;
+    color: beige;
+}
