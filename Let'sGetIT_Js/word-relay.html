@@ -2,61 +2,61 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>끝말잇기</title>
-    <style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>끝말잇기</title>
+<style>
 
-    </style>
+</style>
 </head>
 
 <body>
-    <!-- 내가 가져와야하는 값에 id를 달아줘라 -->
-    <div><span id="order">1</span>번째 참가자</div>
-    <div>제시어:<span id="word"></span></div>
-    <input type="text">
-    <button>입력</button>
-    <script>
-        const number = parseInt(prompt('몇명이 참가하시나요?'), 10);
-        const $input = document.querySelector('input');
-        const $button = document.querySelector('button');
-        const $word = document.querySelector('#word');
-        const $order = document.querySelector('#order');
-        let word; //제시어
-        let newWord; //새로 입력한 단어
+<!-- 내가 가져와야하는 값에 id를 달아줘라 -->
+<div><span id="order">1</span>번째 참가자</div>
+<div>제시어:<span id="word"></span></div>
+<input type="text">
+<button>입력</button>
+<script>
+  const number = parseInt(prompt('몇명이 참가하시나요?'), 10);
+  const $input = document.querySelector('input');
+  const $button = document.querySelector('button');
+  const $word = document.querySelector('#word');
+  const $order = document.querySelector('#order');
+  let word; //제시어
+  let newWord; //새로 입력한 단어
 
-        $input.focus();
-        const onClick = () => {//제시어가 비어있거나, 단어가 올바를때,둘중에 하나라도 맞으면 실행
-            if (!word || word[word.length - 1] === newWord[0]) {
-                
-                //코드가 같으니까 or로 묶어줌 
-                word = newWord;
-                $word.textContent = word; //화면도 같이 바꿔줘랏
-                const order = Number($order.textContent); //현재순서
-                if (order === number) { //현재순서와 참가자 순서가 같으면 1로 돌아감
-                    $order.textContent = 1; //화면 값을 바꿔줘야하니까 textContent
-                } else {
-                    $order.textContent = order + 1;
+  $input.focus();
+  const onClick = () => {//제시어가 비어있거나, 단어가 올바를때,둘중에 하나라도 맞으면 실행
+    if (!word || word[word.length - 1] === newWord[0]) {
+        
+        //코드가 같으니까 or로 묶어줌 
+        word = newWord;
+        $word.textContent = word; //화면도 같이 바꿔줘랏
+        const order = Number($order.textContent); //현재순서
+        if (order === number) { //현재순서와 참가자 순서가 같으면 1로 돌아감
+            $order.textContent = 1; //화면 값을 바꿔줘야하니까 textContent
+        } else {
+            $order.textContent = order + 1;
 
-                }
-            }else { //단어가 올바르지않을때
-                
-                    alert('틀렸습니다')
-                    const order = Number($order.textContent);
-                    $order.textContent = 1;
-                }
-                //중복된거 뒤로빼서 코드 줄여주자@
-                $input.value = ''; //input같은 값은value로 바꿈 나머지는 textContent
-                $input.focus(); 
-            }
-
-        const onInput = (e) => {
-            newWord = e.target.value;
         }
-        $input.addEventListener('input', onInput)
-        $button.addEventListener('click', onClick)
-    </script>
+    }else { //단어가 올바르지않을때
+        
+            alert('틀렸습니다')
+            const order = Number($order.textContent);
+            $order.textContent = 1;
+        }
+        //중복된거 뒤로빼서 코드 줄여주자@
+        $input.value = ''; //input같은 값은value로 바꿈 나머지는 textContent
+        $input.focus(); 
+    }
+
+    const onInput = (e) => {
+        newWord = e.target.value;
+    }
+  $input.addEventListener('input', onInput)
+  $button.addEventListener('click', onClick)
+</script>
 </body>
 
 </html>
