@@ -1,38 +1,45 @@
 
 
 
-#  📒 Vanilla javascript 연습장 📔
+#  📒 Vanilla javascript 연습장  📒 
 
 ## const and let
 
 
+
+```javascript
 const a = 5;
 const b = 10;
-b  = 2; //error: Uncaught TypeError: Assignment to constant variable. const 는 업데이트 xx
+b  = 2; 
+//error: Uncaught TypeError: Assignment to constant variable. const 는 업데이트 xx
 let  myName =  'foo';
 myName = 'hayeon'; //let 은 업데이트 가능
 console.log(a + b);
 console.log( 'hello '+ myName);
+```
 
 const ,let 변수할당에 대해 코드를 보고 작성저의 의도를 알수있다.
-기본적으로 const사옹하고 변수를 업데이트하고싶다면 let ,하지만 중요한 몇몇만 업데이트 하기때문에 필요할때만 let을 쓰자.
-항상 const , 가끔 let, var 노노!
+기본적으로 const사옹하고 변수를 업데이트하고싶다면 let, 하지만 중요한 몇 몇만 업데이트 하기때문에 필요할때만 let을 쓰자.
+항상 const, 가끔 let, var 노노!
 
 ## Booleans
 
+```javascript
 const amIFat = null;
 let someTing;
 console.log(amIFat); //null
 console.log(someTing); //undefined
+```
 
 
-null은  아무것도 없는 값,비어있는게 아니라 아무것도 없는값,의도적으로 표현,자연적으로 발생하지 않는것 ,변수 안에 어떤것이 없다는 것읗 확실히 하기위해 씀 
+null은  아무것도 없는 값, 비어있는게 아니라 아무것도 없는값, 의도적으로 표현,자연적으로 발생하지 않는것 ,변수 안에 어떤것이 없다는 것을 확실히 하기위해 씀.
 undefined은 변수는 존재하는데 정의되지 않음,메모리 안에는 공간은 았지만, 값이 들어가지 않는상태.
 
 ## Arrays
 
 
-array를 쓰는 목적 : 하나의 varialbe 안에 데이터의 list를 가지는것
+array를 쓰는 목적 : 하나의 varialbe 안에 데이터의 list를 가지는것.
+```javascript
 const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday" ,"Friday" ,"Saturday"];
 
 //GET Item from Array 
@@ -46,7 +53,9 @@ daysOfWeek.push("Sunday");
 console.log(daysOfWeek);
 console.log(daysOfWeek[2435435]); //undefined 해당 인덱스가없음
 
+```
 ## Objects
+```javascript
 
 const playerName = 'hayeon';
 const playerScore = 1000;
@@ -75,11 +84,13 @@ player.myFats = 'cat';  //추가 가능
 console.log(player);
 //{name: 'hayeon', ponints: 1000, age: 20, myFats: 'cat'}
 
+```
 
 ## Function
  
 코드를 캡슐화해서 실행을 여러 번 할 수있게 한다. 반복해서 재사용할수있다.
 
+```javascript
 function myDream(name,dream){ // 데이터 받음~~(Parameters)
  
 
@@ -111,10 +122,12 @@ const player = {// 객체에서도 함수 사용
 
 player.seyHello('현상');
 player.seyHello('니꼴라');
+```
 
 
 ## Return 
 
+```javascript
 const age = 98;  
 function calulataKrAge(ageOfForeigner){ //2. 98을 파라미터로 받음
     return  ageOfForeigner + 2;  // 3. return 98 + 2 를  리턴
@@ -151,10 +164,12 @@ const calulator = {
 
     console.log(plusResult,subResult,nulResult,divResult,modResult)
 
+```
 
     
 ## Conditional
 
+```javascript
 const age = parseInt(prompt('How old are you?'));
 
 //string => number ,문자만 입력하면 NaN
@@ -183,6 +198,7 @@ if(( a && b) || ( c && b) ||( x || y)){ //ture일떼 실행
 
 }
 
+```
 ------
 
 # JAVASCRIPT ON THE BROWSER
@@ -192,7 +208,7 @@ if(( a && b) || ( c && b) ||( x || y)){ //ture일떼 실행
 document는 내가 접근할 수 있는 html을 가리키는 객체(object), 내 웹사이트를 가리킴! 
 브라우저가 html정보가 아주 많이 들어있는 document라는 객체를 전달해주는것.
 javascript에서 html을 읽어올 뿐 아니라 html을 변경할 수도 있다.
-console.dir(); // elementㄴ를 더 자세히 볼수있음
+console.dir(); // element를 더 자세히 볼수있음.
 ###  HTML in Javascript
 
 title.textContent => title안에 들어있는 값
@@ -202,6 +218,7 @@ innerHTML
 ###  Searching For Elements 
 
 
+```javascript
 //const title= document.getElementsByTagName('h1'); //h1태그를 모두 가져와라 ,HTMLCollection [h1] 결과값이 h1태그가 담긴 배열임
 const title =  document.querySelector('.hello h1:first-child');//hello라는 클래스네임을 태그안에 h1태그를 가져와라,<h1>Grab me!</h1> hello가 여러개라도 첫번쩨 element만 가져온다,
 //const titie = document.getElementsByClassName('hello')//클래스네임을 찾는거니까 querySelector와 다르게 앞에 . 을 안붙혀도된다!
@@ -210,7 +227,9 @@ title.innerText = 'Got you!!'; //첫번째 h1만 Got you!!
 console.log(title); //<h1>Grab me!</h1> 
 console.log(titles);//NodeList(3) [h1, h1, h1],h1이 들어있는 배열을 가져옴,조건에 부합하는 모든 element를 가져다줌
 
+```
 ### Events 
+```javascript
 
 const title =  document.querySelector('.hello') //css selector
 const btn = document.querySelector('.btn');
@@ -231,12 +250,13 @@ btn.addEventListener('click',handleClick) //click 이벤트가 발생할시 실�
 //나는 버튼이 클릭되면 실행하고싶은거, 바로 실행하고싶지않아서 function이름만 넘겨주고 clcik을 할 경우 js기 니 대신 버튼을 눌러줌!
 //btn.addEventListener('click',handleClick()) 이렇게 할 경우 바로 함수가 실행됨
 
+```
 
 ### events
 
 
 
-//우리가 하는건 javascript로 html element를 가져오고 가져온 element를 event listener애 추가해준것!
+우리가 하는건 javascript로 html element를 가져오고 가져온 element를 event listener애 추가해준것!
 
 
 ### CSS in Javascript 
@@ -245,16 +265,19 @@ btn.addEventListener('click',handleClick) //click 이벤트가 발생할시 실�
 #### 버튼을 클릭했을때 h1 태그의 color를 바꾸고 싶다!
 
 
-#### 1. className으로 
+### 1. className으로 h1태그의 color를 바꿨을때
 html코드
+```html
 <div class="title">
     <h1 class="sexy-font">javascript is fun!!</h1>
     <h1>javascript is fun!!!!</h1>
 </div>
 <button class="btn" >클릭</button>
+```
 
 
 css코드
+```css
 .sexy-font{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -262,7 +285,9 @@ css코드
     color:tomato;
 }
 
+```
 js코드
+```javascript
 btn.addEventListener('click', () => {
   
     const clickedClass = 'clicked';
@@ -274,12 +299,14 @@ btn.addEventListener('click', () => {
     }
 
     });
+```
 className으로 clicked를 추가하면 이전에 있던 class들은 상관하지않고 교체해버린다
 기존의 class를 그냥 없애버림!
 
-#### classList
+### 2. classList 사용했을때
 
 classList는 class들의 목록으로 작업할 수있게끔 허용해줌
+```javascript
 btn.addEventListener('click', () => {
   
   // //h1.classList.toggle('clicked');
@@ -294,12 +321,14 @@ btn.addEventListener('click', () => {
 
     });
 
+```
 className과 달리 기존의  클래스가 사라지지않고 clicked클래스만 제거,추가된다.
 기존의 스타일과 classname을 가져갈 수 있다.
 
 
-#### Element.classList.toggle(string [, force])
+### 3.  Element.classList.toggle(string [, force])
 
+```javascript
 
 btn.addEventListener('click', () => {
   
@@ -308,6 +337,7 @@ btn.addEventListener('click', () => {
 
 });
 
+```
 클래스가 있으면 클래스가 제거되고,false를 반환함다.
 클래스가 없다면 클래스를 추가하고 ture를 반환한다.
 
