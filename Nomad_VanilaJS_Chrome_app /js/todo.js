@@ -28,23 +28,23 @@ function saveTodos(e){
 }   
 
 
+
 //1. li,span,button태그 생성,2. span에 todoValue넣어줌, 
 /** 회면에 그려주는 함수 */
 function paintTodoList(todoValue){ //객체를 받음 
 
     const li = document.createElement('li');
-    const icon =  document.createElement('i');
-    icon.className="fa-solid fa-trash";
     li.id =  todoValue.id;
     const span =  document.createElement('span');
     span.innerText = todoValue.text;
     const btn = document.createElement('button');
-    btn.appendChild(icon);
+    btn.innerText = 'X';
     btn.addEventListener('click',deleteTodo); //btn을 클릭했을때 deleteTodo가 실행된다.
     li.appendChild(span);
     li.appendChild(btn); //appendChild는 맨 마지막!!
     todoList.appendChild(li);
 
+    
 }
 
 /** user가 input에 작성한 값을 가져와서 변수에 저장하고, 초기화시켜주는 함수 */

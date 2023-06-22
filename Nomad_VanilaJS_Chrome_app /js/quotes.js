@@ -57,6 +57,6 @@ const randomIndex = Math.floor(Math.random() * quotes.length);
 
 console.log(randomIndex)
 
-quote.innerText = quotes[randomIndex].quote; 
+quote.innerText =`"${quotes[randomIndex].quote}"`; 
 author.innerText = quotes[randomIndex].author;
 //index를 무작위로뽑고싶다!0부터  quotes의 길이 -1까지
