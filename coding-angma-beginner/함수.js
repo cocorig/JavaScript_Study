@@ -65,14 +65,41 @@ console.log(massge); //Welcome
 
 
 // OR 사용
-function sayHello(name){
+function sayfrinedHello(name){
 
-  let msg = `Hello`; // 지역변수 , 함수 안에서만 사용가능
-  if(name){
-    msg += `, ${name}!`;
-  }
+  let newName  = name || 'friend'  ;
+  //1. name(매개변수)의 값이 없을때 undefined-> false를 반환 때문에 뒤에있는 'friend'반환
+  //2. name(매개변수)의 값이 있을 경우 앞의 값이 true이기 때문에 바로 hayeon 반환
+  let msg = `Hello, ${newName}`;
   console.log(msg);
 }
-sayHello();
-sayHello('hayeon');
+sayfrinedHello();
+sayfrinedHello('hayeon');
 // console.log(msg) ReferenceError: msg is not defined
+
+
+
+//default value를 값을 정할수 있다.
+
+function sayfrinedHello(name = 'friend'){
+
+  let msg = `Hello, ${name}`;
+  console.log(msg);
+}
+sayfrinedHello();
+sayfrinedHello('hayeon');
+
+//return 으로 값 반환
+
+function add(num1 , num2){
+  return num1 + num2;
+}
+const result = add(1, 2);
+console.log(result);
+
+//한번에 한작업에 집중
+//읽기 쉽고 어떤 동작인지 알 수 있게 네이밍
+//showError  에러를 보여줌
+//getName   이름을 얻어옴
+//createUserData   유저데이터 생성
+//checkLogin   로그인 여부 체크
