@@ -27,13 +27,18 @@
           <legend class="a11y-hidden">로그인양식</legend>
           <ul>
             <li>
-              <span class="id_bg"></span>
-              <input type="text"  name="user_id" placeholder="아이디(이메일)">
+              <label class="input-wrap" for="user_id">
+                <span class="bg id"></span>
+                <input type="text" class="user_id" placeholder="아이디(이메일)">
+              </label>
             </li>
             <li class="error id_error">아이디(이메일)을 입력해주세요.</li>
             <li>
-              <span class="pw_bg"></span>
-              <input type="password"  name="user_pw" placeholder="비밀번호">
+              <label class="input-wrap" for="user_pw">
+                <span class="bg pw"></span>
+                <input type="password"  class="user_pw"
+                placeholder="비밀번호">
+              </label>
               <span class="pw_show_hide"></span>
             </li>
             <li class="error pw_error">비밀번호를 입력해주세요.</li>
