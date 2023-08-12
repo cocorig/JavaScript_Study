@@ -1,3 +1,5 @@
+/* #0074e9 #e7223d*/
+
 /* reset */
 body,
 ul,
@@ -5,9 +7,12 @@ li,
 h1,
 h2,
 h3,
-p {
+p,
+input,
+label {
   padding: 0;
   margin: 0;
+
 }
 img {
   vertical-align: top;
@@ -45,4 +50,202 @@ li {
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+fieldset{
+  border:0;
+  padding: 0;
+  margin: 0;
+}
+
+/*css*/
+.wrapper{
+  min-width: 290px;
+  max-width: 460px;
+  padding: 0 5%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* logo */
+header{
+
+}
+header h1{
+  text-align: center;
+  padding-top: 45px;
+ 
+}
+h1 a{
+ display: block;
+}
+h1 a img{
+
+  max-width: 195px;
+  
+}
+main {
+  background-color: beige;
+
+}
+main .tab-loginBtn{
+  display: flex;
+  margin-top: 24px;
+}
+main .tab-loginBtn .tab{
+  flex: 1;
+  padding: 14px 0;
+  color: #454f5b;
+  line-height: 19px;
+
+}
+main .tab-loginBtn .tab:active{
+  color: #346aff;
+  font-weight: bold;
+  border-bottom: 3px solid #346aff;
+
+}
+
+main .tab-loginBtn .tab_email{
+
+}
+main .tab-loginBtn .tab_qr{
+
+}
+
+main #loginform{
+  border-bottom: 1px solid #ccc ;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+main #loginform fieldset{
+  
+}
+main #loginform fieldset ul{
+  
+}
+main #loginform fieldset ul li{
+  
+}
+main #loginform fieldset ul .error{
+  
+}
+main #loginform fieldset ul .id_error{
+  
+}
+main #loginform fieldset ul .pw_error{
+  
+}
+main #loginform fieldset ul li{
+  
+}
+main #loginform fieldset ul li span{
+  
+}
+main #loginform fieldset ul li .id_bg{
+  
+}
+main #loginform fieldset ul li .pw_bg{
+
+}
+main #loginform fieldset input[type=text]{
+
+}
+main #loginform fieldset input[type=password]{
+
+}
+main #loginform fieldset ul li .pw_show_hide{
+
+}
+
+/* 자동로그인 , 아이디.비밀번호 찾기 */
+main #loginform fieldset .btm{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+/* 체크박스 */
+/* input */
+
+.btm label{
+  display: inline-flex;
+  align-items: center;
+  
+}
+/* label 앞에  체크박스 커스텀 ,체크되기 전 단계*/
+.btm label::before,
+#login_y:checked + label:before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.btm label::before{
+  
+  background-image: url(./img/checkbox.png);
+  margin-right: 6px;
+} 
+/* 체크박스가 활성되었을 때의 자동로그인 글자*/
+#login_y:checked + label:before{
+  
+  background-image: url(./img/checked.png);
+}
+
+
+.btm .idpw_search{
+padding-right: 12px;
+color: #123fb9;
+position: relative;
+}
+.btm .idpw_search::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  right: 2px;
+  top: 50%;
+  border:solid #123fb9;
+  border-width:1px 1px 0 0;
+  transform:translateY(-50%) rotate(45deg); 
+  }
+.regiter{
+  font-weight:bold;
+  width: 100%;
+  padding:12px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: 19px;
+}
+fieldset .login_btn{ 
+  margin-top: 8px;
+  background-color: #346aff;
+  color: white;
+  box-shadow: 0 1px 0 #123fb9;
+
+}
+main .join_link{
+  display: block;
+  text-align: center;
+  background: #fff;
+  color: #454f5b;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 #eee;
+}
+
+main .biz-register{
+
+}
+main .biz-register p{
+
+}
+main .biz-register a{
+
+}
+footer{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  color: #555;
 }

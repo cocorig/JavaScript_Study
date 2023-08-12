@@ -9,38 +9,58 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <h1><a href="#"><img src="./img/logo.png" alt="쿠팡"></a></h1>
-  <main>
-    <form action="#" method="post" id="loginform">
-      <fieldset>
-        <legend class="a11y-hidden">로그인양식</legend>
-        <ul>
-          <li>
-            <span class="id_bg"></span>
-            <input type="text"  name="user_id" placeholder="아이디(이메일)">
-          </li>
-          <li class="error id_error">아이디(이메일)을 입력해주세요.</li>
-          <li>
-            <span class="pw_bg"></span>
-            <input type="password"  name="user_pw" placeholder="비밀번호">
-            <span class="pw_show_hide"></span>
-          </li>
-          <li class="error pw_error">비밀번호를 입력해주세요.</li>
-        </ul>
-        <div class="btm">
-          <label>
-            <input type="checkbox" name="login_v" id="login_v">
-            <span>자동로그인</span>
-          </label>
-          <a href="#" class="id_search">아이디(이메일)/비밀번호 찾기</a>
-        </div>
-        <button type="submit" id="login_btn">로그인</button>
-      </fieldset>
-    </form>
-    <a href="#" class="join_link">회원가입</a>
-  </main>
-  <footer>
-    &copy; Coupang Corp. All rights reserved.
-  </footer>
+  <div class="wrapper">
+    <!-- 로고 -->
+    <header class="header">
+      <h1><a href="#"><img src="./img/logo.png" alt="쿠팡"></a></h1>
+    </header>
+    <!-- 메인 -->
+    <main>
+      <!-- 상단 로그인 헤더 -->
+    <div class="tab-loginBtn">
+      <button class="tab tab_email">이메일 로그인</button>
+      <button class="tab tab_qr">QR코드 로그인</button>
+    </div>
+      <!-- 로그인 폼-->
+      <form action="#" method="post" id="loginform">
+        <fieldset>
+          <legend class="a11y-hidden">로그인양식</legend>
+          <ul>
+            <li>
+              <span class="id_bg"></span>
+              <input type="text"  name="user_id" placeholder="아이디(이메일)">
+            </li>
+            <li class="error id_error">아이디(이메일)을 입력해주세요.</li>
+            <li>
+              <span class="pw_bg"></span>
+              <input type="password"  name="user_pw" placeholder="비밀번호">
+              <span class="pw_show_hide"></span>
+            </li>
+            <li class="error pw_error">비밀번호를 입력해주세요.</li>
+          </ul>
+          <div class="btm">
+            <input type="checkbox"  id="login_y" class="a11y-hidden">
+            <label for="login_y">자동로그인
+              <!-- ::brfore -->
+            </label>
+            <a href="#" class="idpw_search">아이디∙비밀번호 찾기</a>
+          </div>
+          <button type="submit" class="regiter login_btn">로그인</button>
+        </fieldset>
+      </form>
+      <!-- 선 -->
+      <!-- 회원가입 --> 
+      <a href="#" class="regiter join_link">회원가입</a>
+      <div class="biz-register">
+        <p>법인 고객이신가요?</p>
+        <p>사업자 회원으로 전용 특가 혜택을 누려보세요.</p>
+        <a href="">쿠팡비즈 간편가입</a>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer>
+      &copy; Coupang Corp. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
