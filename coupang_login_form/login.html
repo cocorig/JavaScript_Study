@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쿠팡 로그인</title>
-    <link rel="stylesheet" href="./main.js">
+    <script src="./main.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
     <main>
       <!-- 상단 로그인 헤더 -->
     <div class="tab-loginBtn">
-      <button class="tab tab_email">이메일 로그인</button>
+      <button class="tab tab_email active">이메일 로그인</button>
       <button class="tab tab_qr">QR코드 로그인</button>
     </div>
       <!-- 로그인 폼-->
@@ -27,26 +27,28 @@
           <legend class="a11y-hidden">로그인양식</legend>
           <ul>
             <li>
-              <label class="input-wrap" for="user_id">
+              <label class="input-wrap id" for="user_id">
                 <span class="bg id"></span>
                 <input type="text" class="user_id" placeholder="아이디(이메일)">
               </label>
             </li>
             <li class="error id_error">아이디(이메일)을 입력해주세요.</li>
             <li>
-              <label class="input-wrap" for="user_pw">
+              <label class="input-wrap pw" for="user_pw">
                 <span class="bg pw"></span>
                 <input type="password"  class="user_pw"
                 placeholder="비밀번호">
               </label>
-              <span class="pw_show_hide"></span>
+              <button class="pw_show_hide" type="button">
+                <span title="문자 보이기"></span>
+              </button>
             </li>
             <li class="error pw_error">비밀번호를 입력해주세요.</li>
           </ul>
           <div class="btm">
             <input type="checkbox"  id="login_y" class="a11y-hidden">
             <label for="login_y">자동로그인
-              <!-- ::brfore -->
+              <!-- ::before -->
             </label>
             <a href="#" class="idpw_search">아이디∙비밀번호 찾기</a>
           </div>

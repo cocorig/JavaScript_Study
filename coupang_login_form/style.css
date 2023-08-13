@@ -9,10 +9,14 @@ h2,
 h3,
 p,
 input,
-label {
+label,
+button{
   padding: 0;
   margin: 0;
 
+}
+label{
+  cursor: pointer;
 }
 img {
   vertical-align: top;
@@ -58,12 +62,15 @@ fieldset{
 }
 
 /*css*/
+body{
+  box-sizing: border-box;
+}
 .wrapper{
   min-width: 290px;
   max-width: 460px;
   padding: 0 5%;
   margin: 0 auto;
-  box-sizing: border-box;
+
 }
 
 /* logo */
@@ -84,8 +91,8 @@ h1 a img{
   
 }
 main {
-  background-color: beige;
 
+width: 100%;
 }
 main .tab-loginBtn{
   display: flex;
@@ -98,49 +105,51 @@ main .tab-loginBtn .tab{
   line-height: 19px;
 
 }
-main .tab-loginBtn .tab:active{
+
+.active{
   color: #346aff;
   font-weight: bold;
   border-bottom: 3px solid #346aff;
-
-}
-
-main .tab-loginBtn .tab_email{
-
-}
-main .tab-loginBtn .tab_qr{
-
 }
 
 main #loginform{
   border-bottom: 1px solid #ccc ;
-  padding-bottom: 12px;
+  padding-bottom: 13px;
   margin-bottom: 16px;
 }
-main #loginform fieldset{
-  
-}
-main #loginform fieldset ul{
-  
-}
+
 main #loginform fieldset ul li{
   border: 1px solid #ccc;
   background-color: #fff;
+ 
 }
 main #loginform fieldset ul li:nth-child(1){
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
+/*  */
 main #loginform fieldset ul .error{
   color: #e52528;
   font-size: 12px;
   /* 위 양옆 아랴 */
   margin: 9px 12px 0;
   display: none;
+  border: 0;
 }
-
+main #loginform fieldset ul .error.id_error{
+  margin-bottom: 12px;
+}
+.error-border{
+  border-bottom: 2px solid #e52528;
+}
+/*  */
 main #loginform fieldset .input-wrap{
   display: flex;
+
 }
+main #loginform fieldset ul li{
+  position: relative;
+}
+
 
 main #loginform fieldset ul li .input-wrap .bg{
   
@@ -150,12 +159,18 @@ main #loginform fieldset ul li .input-wrap .bg{
   margin-right: 1px;
   position: relative;
 }
+
 main #loginform fieldset ul li .input-wrap .bg + input{
   padding: 16px 0 12px;
   border: 0;
   width: 100%;
   text-indent: 12px;
-}main #loginform fieldset ul li .input-wrap .bg + input::placeholder{
+
+}
+main #loginform fieldset ul li .input-wrap .bg + input:focus{
+  outline: transparent;
+}
+main #loginform fieldset ul li .input-wrap .bg + input::placeholder{
   font-weight: bold;
   color: #ccc;
   font-size: 14px;;
@@ -183,16 +198,24 @@ main #loginform fieldset ul li .bg.pw::before{
   background-position: -22px -1px;
 }
 
-main #loginform fieldset .user_id{
-
-}
-main #loginform fieldset .user_pw{
-
-}
 main #loginform fieldset ul li .pw_show_hide{
+  
+  min-width:  46px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 
 }
-
+.pw_show_hide span{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(./img/coupang-sprite.svg);
+  background-size: 148px 148px;
+  background-position: -106px -1px;
+  vertical-align: bottom;
+}
 /* 자동로그인 , 아이디.비밀번호 찾기 */
 main #loginform fieldset .btm{
   display: flex;
@@ -285,6 +308,19 @@ main .biz-register a{
   font-weight: bold;
   color: #454f5b;
   margin-top: 6px;
+  position: relative;
+  padding-right: 10px;
+  line-height: 30px;
+}
+main .biz-register a::after{
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 50%;
+  border:solid  #454f5b;
+  border-width:1px 1px 0 0;
+  transform:translateY(-50%) rotate(45deg); 
 }
 footer{
   text-align: center;
