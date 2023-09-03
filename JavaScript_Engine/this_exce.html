@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this를 분석할 수 없는 케이스</title>
+</head>
+<body>
+
+  <h1>Logo</h1>
+
+ 
+ <script>
+  //  이런 경우의 this는 외우자
+  const logo =  document.querySelector('h1');
+  logo.addEventListener('click',function(){
+    console.log(this); //h1 태그, this는 함수가 호출될 때 결정된다
+  }) //addEventListener라는 함수가 호출, 뒤에 functuon이 호출된게 아님!!!!!
+
+
+
+  // 원복 코드 추측
+  const obj = {
+    addEventListener : function(eventName ,  callback){
+      callback();
+    },
+  };
+
+  header.addEventListener('click' , function(){
+    console.log(this);
+  })
+ </script>
+</body>
+</html>
